@@ -21,21 +21,21 @@ public class EtrustTest {
     }
 
 
-    @Test
+   @Test
     public void gradeCheck() {
         driver.get("https://qa.trustedshops.com/buyerrating/info_X1C77CF6EE730D2E88A284D7203D1B20F.html");
-        driver.findElement(By.xpath("//*[@id='shopInfo']/div[2]/div[2]/div/div/a[1]")).click();
         driver.manage().window().maximize();
+        driver.findElement(By.xpath("//div[@class='hidden-xs']/a[text()='Bekleidung']")).click();
+        waitForPageToLoad();
         driver.manage().timeouts().implicitlyWait(4, TimeUnit.SECONDS);
-        List<WebElement> text = driver.findElements(By.className("shop-mark"));
-        System.out.println(text.size());
-        String completeText;
-        for (WebElement element : text) {
-            completeText = element.getText();
-            if (completeText.equals("")) {
-                System.out.println("Grade of website: " + completeText + " Grade is zero");
+        List<WebElement> totalGrades = driver.findElements(By.className("shop-mark"));
+        System.out.println("Total number of grades in a page : " + totalGrades.size());
+        for (WebElement allGrades : totalGrades) {
+         String grade = allGrades.getText();
+            if (grade.equals("")) {
+                System.out.println("Grade of website: " + grade + " Grade is zero");
             } else {
-                System.out.println("Grade of website: " + completeText + " Grade is greater than zero ");
+                System.out.println("Grade of website: " + grade + " Grade is greater than zero ");
             }
         }
     }
