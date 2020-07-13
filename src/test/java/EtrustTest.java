@@ -38,6 +38,8 @@ public class EtrustTest {
                 System.out.println("Grade of website: " + grade + " Grade is greater than zero ");
             }
         }
+        System.out.println("Test case executed succesfully closing browser: ");
+        driver.quit();
     }
 
     @Test
@@ -58,6 +60,7 @@ public class EtrustTest {
         printList(withGrade);
         System.out.println("Links with no grade = " + withoutGrade.size());
         printList(withoutGrade);
+        driver.quit();
     }
 
     private void printList(List<String> grade) {
