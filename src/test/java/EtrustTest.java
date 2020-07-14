@@ -27,7 +27,6 @@ public class EtrustTest {
         driver.manage().window().maximize();
         driver.findElement(By.xpath("//div[@class='hidden-xs']/a[text()='Bekleidung']")).click();
         waitForPageToLoad();
-        driver.manage().timeouts().implicitlyWait(4, TimeUnit.SECONDS);
         List<WebElement> totalGrades = driver.findElements(By.className("shop-mark"));
         System.out.println("Total number of grades in a page : " + totalGrades.size());
         for (WebElement allGrades : totalGrades) {
@@ -38,7 +37,7 @@ public class EtrustTest {
                 System.out.println("Grade of website: " + grade + " Grade is greater than zero ");
             }
         }
-        System.out.println("Test case executed succesfully closing browser: ");
+        System.out.println("Test case executed succesfully closing browser ");
         driver.quit();
     }
 
@@ -60,6 +59,7 @@ public class EtrustTest {
         printList(withGrade);
         System.out.println("Links with no grade = " + withoutGrade.size());
         printList(withoutGrade);
+        System.out.println("Test cases executed successfully closing the browser");
         driver.quit();
     }
 
@@ -90,7 +90,6 @@ public class EtrustTest {
     public void waitForPageToLoad(){
         JavascriptExecutor js = (JavascriptExecutor)driver;
         int i=0;
-
         while(i!=10){
             String state = (String)js.executeScript("return document.readyState;");
             if(state.equals("complete"))
@@ -99,8 +98,7 @@ public class EtrustTest {
                 wait(2);
             i++;
         }
-        wait(2);// wait of 2 sec between page status and jquery
-        // check for jquery status
+        wait(2);
         i=0;
         while(i!=10){
 
