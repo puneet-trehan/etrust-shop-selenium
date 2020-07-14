@@ -45,7 +45,6 @@ public class EtrustTest {
     public void withAndWithoutGrades() {
         driver.get("https://qa.trustedshops.com/buyerrating/info_X1C77CF6EE730D2E88A284D7203D1B20F.html");
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.findElement(By.xpath("//div[@class='hidden-xs']/a[text()='Koffer, Taschen & Lederwaren']")).click();
         waitForPageToLoad();
         List<String> withGrade = new ArrayList<String>();
