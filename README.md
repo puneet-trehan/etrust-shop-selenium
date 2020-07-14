@@ -18,7 +18,7 @@ Since,page is not mentioned and as per sequence of requirement I cannot see webs
 Note #1: In requirement it is mentioned grade greater than 0, however I could not find 0 grade in a page ,so for this test case I assume no grade equals to 0 and compare no grade value with grade value.
 
 3. withAndWithoutGrades(Click on the bottom of the list to load more reviews and validate that it happened)
-Requirement was not clear about pages whether to print in list or in sequence and also whether to pass or fail the test case when find 0 grade.However,this test print the list of total websites with and without grades for all the pages. Also, this test can be use with any categories appearing at the bottom of the page by changing the name of the category in line #50. This test case use three methods, method #1 printList : Print list of all the websites. #2 getGradeInfo: Grade information with grade equal to 0 or grade greater than 0. #3. waitForPageToLoad: Is use ,to wait until all java script elements are visible.
+Requirement was not clear about pages whether to print in list or in sequence and also whether to pass or fail the test case when find 0 grade.However,this test print the list of total websites with and without grades for all the pages. Also, this test can be use with any categories appearing at the bottom of the page by changing the name of the category in line #49. This test case use three methods, method #1 printList : Print list of all the websites. #2 getGradeInfo: Grade information with grade equal to 0 or grade greater than 0. #3. waitForPageToLoad: Is use ,to wait until all java script elements are visible.
 Note #1: Assumptions same as test case #2.
 
 # Requirement Understanding
